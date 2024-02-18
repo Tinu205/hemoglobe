@@ -14,7 +14,7 @@
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      #hom,#reg{
+      #hom,#reg,#don,#abt{
         height: 100vh;
         padding-top: 50px;
       }
@@ -89,6 +89,30 @@
       .bd-mode-toggle {
         z-index: 1500;
       }
+
+
+      .form-signin {
+            text-align: center;
+            max-width: 330px;
+            padding-top:7em ;
+            margin-left: 30vw;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
     </style>    
   </head>
 <body>  
@@ -107,12 +131,97 @@
   </div>
   <div id="reg">
   <?php
-    load_template("log_in");
-  ?>
+
+$username = $_POST['email_address'];
+$password = $_POST['password'];
+$page = $_POST[''];
+$result = FALSE;
+if($username == "panda@mail.com" && $password == "pandaman"){
+  $result = TRUE;
+}
+
+if ($result) {
+    ?>
+<main class="container">
+    <div class="bg-light p-5 rounded mt-3">
+        <h1>Login success</h1>
+        <pre><?php
+            load_template("reg_anal");
+        ?></pre>
+    </div>
+</main>
+<?php
+} else {
+        ?>
+<main class="form-signin">
+    <form method="post" action="index.php#reg">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input name="email_address" type="email" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary hvr-grow-rotate" type="submit">Sign in</button>
+    </form>
+</main>
+
+<?php
+    }
+?>
   </div>
   <div id="don">
+  <?php
+
+$username = $_POST['email_address'];
+$password = $_POST['password'];
+$page = $_POST[''];
+$result = FALSE;
+if($username == "panda@mail.com" && $password == "pandaman"){
+  $result = TRUE;
+}
+
+if ($result) {
+    ?>
+<main class="container">
+    <div class="bg-light p-5 rounded mt-3">
+        <h1>Login success</h1>
+        <pre><?php
+            load_template("don");
+        ?></pre>
+    </div>
+</main>
+<?php
+} else {
+        ?>
+<main class="form-signin">
+    <form method="post" action="login.php">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input name="email_address" type="email" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary hvr-grow-rotate" type="submit">Sign in</button>
+    </form>
+</main>
+
+<?php
+    }
+?>
+  </div>
+  <div id="abt">
     <?php
-      load_template("log_in");
+    load_template("about");
     ?>
   </div>
 
