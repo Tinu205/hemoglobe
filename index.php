@@ -14,7 +14,7 @@
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      #hom,#reg,#don,#abt{
+      #hom,#reg,#don,#abt,#sout{
         height: 100vh;
         padding-top: 50px;
       }
@@ -95,7 +95,7 @@
             text-align: center;
             max-width: 330px;
             padding-top:7em ;
-            margin-left: 30vw;
+            margin-left: 35vw;
 }
 
 .form-signin .form-floating:focus-within {
@@ -113,7 +113,17 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-    </style>    
+    </style>   
+
+    <script>
+      function signOut() {
+        // Close the current window
+        window.close();
+        // Open a new window with the desired URL (index.php in this case)
+        window.open('index.php', '_blank');
+      }
+    </script>
+
   </head>
 <body>  
 <header data-bs-theme="dark">

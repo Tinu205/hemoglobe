@@ -91,6 +91,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page"  href="#abt">About us</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="signOut()">Sign out</a>
+        </li>
       </ul>
     </div>
   </div>
