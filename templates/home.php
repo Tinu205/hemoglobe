@@ -20,7 +20,7 @@
     <section class="py-5 text-center">
         <h1 class="fw-light">Hemoglobe</h1>
         <p class="lead text-body-secondary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, eveniet officiis. Magni, pariatur excepturi! Ad vero, quod perspiciatis nobis, voluptatum ratione aliquam nulla quidem dolorem temporibus maiores quae similique accusamus.
+            Bridging the gap for life saving blood . We're not just connecting donors with those in need; we're bridging the essential gap between blood banks and hospitals.
         </p>
         <p>
           <a href="#abt" class="btn btn-primary my-2">Our goals</a>
