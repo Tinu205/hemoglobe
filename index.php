@@ -153,12 +153,9 @@ if($username == "panda@mail.com" && $password == "pandaman"){
 if ($result) {
     ?>
 <main class="container">
-    <div class="bg-light p-5 rounded mt-3">
-        <h1>Login success</h1>
-        <pre><?php
+        <?php
             load_template("reg_anal");
-        ?></pre>
-    </div>
+        ?>
 </main>
 <?php
 } else {
@@ -183,58 +180,12 @@ if ($result) {
 <?php
     }
 ?>
-  </div>
-  <div id="don">
-  <?php
-
-$username = $_POST['email_address'];
-$password = $_POST['password'];
-$page = $_POST[''];
-$result = FALSE;
-if($username == "panda@mail.com" && $password == "pandaman"){
-  $result = TRUE;
-}
-
-if ($result) {
-    ?>
-<main class="container">
-    <div class="bg-light p-5 rounded mt-3">
-        <h1>Login success</h1>
-        <pre><?php
-            load_template("don");
-        ?></pre>
-    </div>
-</main>
-<?php
-} else {
-        ?>
-<main class="form-signin">
-    <form method="post" action="login.php">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-        <div class="form-floating">
-            <input name="email_address" type="email" class="form-control" id="floatingInput"
-                placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary hvr-grow-rotate" type="submit">Sign in</button>
-    </form>
-</main>
-
-<?php
-    }
-?>
-  </div>
-  <div id="abt">
+</div>
+<div id="abt">
     <?php
     load_template("about");
     ?>
-  </div>
-
-</main>    
-  </body>
+</div>
+   
+</body>
 </html>

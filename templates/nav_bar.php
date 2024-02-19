@@ -83,10 +83,7 @@
           <a class="nav-link active" aria-current="page"  href="#hom">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page"  href="#reg">Regionol analysis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page"   href="#don">Donors list</a>
+          <a class="nav-link active" aria-current="page"  href="#reg">Regionol analysis / donor list</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page"  href="#abt">About us</a>
