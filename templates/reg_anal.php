@@ -31,26 +31,17 @@
         </div>
         <div class="col-6 col-md-4 border">
             <div class = "row border">
-            <h3>Donor list</h3>
+                <h3>Donor list</h3>
             </div>
-            <div class = row>
-            <?php
-                for($i=0;$i<4;$i++){
-            ?>
-            <div class = "row    text-start">
-                <div class="dondet py-3">
-                    <?php
-                        printf("Donor name: ");
-                    ?>
-                    <br>
-                    <?php
-                        printf("Donor name: ");
-                    ?>
-                </div>
-            </div>
-            <?php
-                }
-            ?>
+            <div class="row" style="max-height: 300px; overflow-y: auto;">
+                <?php for ($i = 0; $i < 10; $i++) { ?>
+                    <div class="row text-start">
+                        <div class="dondet py-3">
+                            <?php printf("Donor name: %d", $i + 1); ?><br>
+                            <?php printf("Donor details: %d", $i + 1); ?>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
 
