@@ -1,9 +1,10 @@
 <?php
-    include 'libs/load.php';
+include 'libs/load.php';
 ?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -11,10 +12,12 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      #hom, #reg, #don, #abt, #sout {
-        height: 100vh;
-        padding-top: 50px;
-        background-color: #F3FAE1; /* Background color */
+        /* Your CSS styles */
+
+      .btn-danger{
+        margin-left: 25em;
+        margin-top: 1em;
+
       }
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -76,10 +79,6 @@
         --bs-btn-active-bg: #5a23c8;
         --bs-btn-active-border-color: #5a23c8;
       } */
-      .btn-danger{
-        margin-left: 10rem;
-        margin: top ;
-      }
       .bd-mode-toggle {
         z-index: 1500;
       }
@@ -102,36 +101,22 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
-    </style>   
+    </style>
 
     <script>
-      function signOut() {
-        // Close the current window
-        window.close();
-        // Open a new window with the desired URL (index.php in this case)
-        window.open('index.php', '_blank');
-      }
+        function signOut() {
+            window.location.href = 'logintest.php?logout=true'; // Redirect to logout page
+        }
     </script>
 
-  </head>
-<body>  
-<header data-bs-theme="dark">
-  <?php
-    load_template("nav_bar");
-  ?>
-</header>
+</head>
+<body>
 
 <main>
-    
-  <div id="hom">    
-  <?php
-    load_template("home");
-  ?>
-  </div>
-  <div id="reg">
+<div id="reg">
         <?php
-        $username = $_POST['email_address'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $username = $_POST['email_address'];
+        $password = $_POST['password'];
         $result = User::login($username, $password);
 
         if ($result) {
@@ -149,7 +134,7 @@
         } else {
             ?>
             <main class="form-signin">
-                <form method="post" action="index.php#reg"> <!-- Form submits to index.php with an anchor to #reg section -->
+                <form method="post" action="Add_details.php">
                     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
                     <div class="form-floating">
                         <input name="email_address" type="email" class="form-control" id="floatingInput"
@@ -168,11 +153,11 @@
         }
         ?>
     </div>
-</div>
-<div id="abt">
-    <?php
-    load_template("about");
-    ?>
-</div>
+</main>
+<script>
+    function signOut() {
+        window.location.href = 'Add_details.php'; // Redirect to logout page
+    }
+</script>
 </body>
 </html>

@@ -1,17 +1,20 @@
 <?php
+include "../libs/load.php";
 // MySQL server information
-$server = "localhost";
-$username = "panda"; // Assuming the username is "panda"
-$password = "cutepanda"; // Password for MySQL user
-$database = "hemo"; // Name of the database
+// $server = "localhost";
+// $username = "panda"; // Assuming the username is "panda"
+// $password = "cutepanda"; // Password for MySQL user
+// $database = "hemo"; // Name of the database
 
-// Attempt to connect to MySQL database
-$conn = new mysqli($server, $username, $password, $database);
+// // Attempt to connect to MySQL database
+// $conn = new mysqli($server, $username, $password, $database);
 
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// // Check the connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+
+$conn = database::getConnection();
 
 $sql_donor = "SELECT name, blood_group, mobile_number FROM donor_list";
 $result = $conn->query($sql_donor);
