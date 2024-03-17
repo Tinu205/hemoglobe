@@ -105,7 +105,7 @@ include 'libs/load.php';
 
     <script>
         function signOut() {
-            window.location.href = 'logintest.php?logout=true'; // Redirect to logout page
+            window.location.href = 'Add_details.php?logout=true'; // Redirect to logout page
         }
     </script>
 
@@ -119,16 +119,23 @@ include 'libs/load.php';
         $password = $_POST['password'];
         $result = User::login($username, $password);
 
+        if (isset($_GET['logout'])) {
+          Session::destroy();
+          // die("Session destroyed, <a href='Add_details.php'></a>");
+          header("Location: ".$_SERVER['PHP_SELF']);
+          exit();
+          
+      }
         if ($result) {
             ?>
             <main class="container">
                 <?php
-                load_template("reg_anal");
+                load_template("add_details");
                 ?>
             </main>
 
             <!-- Sign-out button -->
-            <button onclick="signOut()" class="btn btn-lg btn-danger">Sign Out</button>
+            <!-- <button onclick="signOut()" class="btn btn-lg btn-danger">Sign Out</button> -->
 
             <?php
         } else {
@@ -154,10 +161,6 @@ include 'libs/load.php';
         ?>
     </div>
 </main>
-<script>
-    function signOut() {
-        window.location.href = 'Add_details.php'; // Redirect to logout page
-    }
-</script>
+
 </body>
 </html>

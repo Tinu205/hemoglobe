@@ -2,6 +2,9 @@
 class User{
  public static function login($user,$pass)   
  {
+    if (isset($_SESSION['is_loggedin']) && $_SESSION['is_loggedin'] === true && isset($_SESSION['session_user'])) {
+        return $_SESSION['session_user']; // Return previous session user
+    }
     $connection = database::getConnection();
     //$pass = md5($pass);
     $query = "SELECT * FROM `log_cred` WHERE `email` = '$user'";

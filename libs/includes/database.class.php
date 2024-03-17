@@ -23,5 +23,10 @@
                 return database::$conn;
             }
         }
+
+        public static function add_data($month,$blood_group,$blood_collected,$blood_used){
+            $remaining_blood = $blood_collected-$blood_used;
+            
+        }
     }
 ?>
