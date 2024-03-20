@@ -9,7 +9,7 @@
             {
                 $servername = "localhost";
                 $username_db = "panda";
-                $password_db = "cutepanda";
+                $password_db = "cutepanda";//will change later
                 $database = "hemo";
 
                 $connection = new mysqli($servername,$username_db,$password_db,$database);
@@ -24,9 +24,50 @@
             }
         }
 
-        public static function add_data($month,$blood_group,$blood_collected,$blood_used){
+        public static function add_data($month,$blood_group,$blood_collected,$blood_used,$year){
             $remaining_blood = $blood_collected-$blood_used;
-            
+            $connection = database::getConnection();
+            //  print("$month $blood_group $blood_collected $blood_used $year");
+
+
+            if($year==1){
+                $query="UPDATE `blood_bank_data_year_1` 
+                SET 
+                  `blood_collected` = '$blood_collected',
+                  `blood_used` = '$blood_used',
+                  `remaining_blood` = '$remaining_blood'
+                WHERE 
+                  `month` = '$month' 
+                  AND `blood_group` = '$blood_group'" ;
+
+            }else if($year==2){
+                $query = "UPDATE `blood_bank_data_year_2` 
+                SET 
+                  `blood_collected` = '$blood_collected',
+                  `blood_used` = '$blood_used',
+                  `remaining_blood` = '$remaining_blood'
+                WHERE 
+                  `month` = '$month' 
+                  AND `blood_group` = '$blood_group'";
+
+            }else{
+                $query = "UPDATE `blood_bank_data_year_3` 
+                SET 
+                  `blood_collected` = '$blood_collected',
+                  `blood_used` = '$blood_used',
+                  `remaining_blood` = '$remaining_blood'
+                WHERE 
+                  `month` = '$month' 
+                  AND `blood_group` = '$blood_group'";
+
+            }
+            $result = $connection->query($query);
+            if ($result === TRUE) {
+                return $result; // Return the result if successful
+            } else {
+                return $connection->error; // Return the error message if query fails
+            }
+                        
         }
 
         public static function get_data(){
@@ -46,3 +87,5 @@
         }
     }
 ?>
+
+

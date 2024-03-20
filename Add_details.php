@@ -161,6 +161,17 @@ include 'libs/load.php';
         ?>
     </div>
 </main>
+<?php
+          if(isset($_POST['month']) && isset($_POST['blood_group']) && isset($_POST['blood_collected']) && isset($_POST['blood_used']) && isset($_POST['year'])){
+            $month = $_POST['month'];
+            $blood_group = $_POST['blood_group'];
+            $blood_collected = $_POST['blood_collected'];
+            $blood_used = $_POST['blood_used'];
+            $year = $_POST['year'];
+            $result = database::add_data($month, $blood_group, $blood_collected, $blood_used, $year);
+        }
+
+?>
 
 </body>
 </html>
