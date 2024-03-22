@@ -129,11 +129,19 @@
   ?>
   </div>
   <div id="reg">
-        <?php
-        $username = $_POST['email_address'] ?? '';
-        $password = $_POST['password'] ?? '';
+  <?php
+        $result = false;
+        $username = $_POST['email_address'];
+        $password = $_POST['password'];
         $result = User::login($username, $password);
 
+        if (isset($_GET['logout'])) {
+          Session::destroy();
+          // die("Session destroyed, <a href='Add_details.php'></a>");
+          header("Location: ".$_SERVER['PHP_SELF']);
+          exit();
+          
+        }
         if ($result) {
             ?>
             <main class="container">

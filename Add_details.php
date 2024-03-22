@@ -114,7 +114,9 @@ include 'libs/load.php';
 
 <main>
 <div id="reg">
+        
         <?php
+        $result = false;
         $username = $_POST['email_address'];
         $password = $_POST['password'];
         $result = User::login($username, $password);
@@ -125,7 +127,7 @@ include 'libs/load.php';
           header("Location: ".$_SERVER['PHP_SELF']);
           exit();
           
-      }
+        }
         if ($result) {
             ?>
             <main class="container">
